@@ -129,7 +129,8 @@ dmypy.json
 .pyre/
 
 # Jespipe specific ignores
-/jespipe
+jespipe/
+data/
 *.tar
 *.tar.*
 *.tgz
