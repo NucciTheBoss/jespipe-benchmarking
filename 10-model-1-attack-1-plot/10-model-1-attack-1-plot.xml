@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simu>
     <train>
-        <dataset file="energy-appliances-weather/energy-appliances-weather.csv">
+        <dataset file="optical-interconnection/optical-interconnection-dataset.csv">
             <model plugin="plugins/models/RNN/LSTM.py">
-                <name value="energy-appliances-weather-one-attack-one-plot" />
+                <name value="optical-interconnection-one-attack-one-plot" />
 
                 <algorithm value="LSTM" />
 
@@ -16,27 +16,27 @@
                     <learning_rate type="float" value="0.001" />
                 </parameters>
 
-                <xgboost plugin="plugins/manips/many_to_one_xgb.py" tag="xgb1-energy">
+                <xgboost plugin="plugins/manips/many_to_one_xgb.py" tag="xgb1-optical">
                     <n_features type="int" value="9" />
                 </xgboost>
 
-                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf1-energy"></randomforest>
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf1-optical"></randomforest>
 
-                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca1-energy">
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca1-optical">
                     <n_features type="int" value="9" />
                 </pca>
 
-                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand1-energy">
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand1-optical">
                     <time_interval type="int" value="20" />
                 </candlestick>
 
-                <vanilla plugin="plugins/manips/many_to_one_vanilla.py" tag="vanilla1-energy"></vanilla>
+                <vanilla plugin="plugins/manips/many_to_one_vanilla.py" tag="vanilla1-optical"></vanilla>
             </model>
         </dataset>
 
-        <dataset file="parkinsons-telemonitoring/parkinsons-telemonitoring.csv">
+        <dataset file="ozone-level/ozone-level-dataset.csv">
             <model plugin="plugins/models/RNN/LSTM.py">
-                <name value="parkinsons-telemonitoring-one-attack-one-plot" />
+                <name value="ozone-level-one-attack-one-plot" />
 
                 <algorithm value="LSTM" />
 
@@ -49,26 +49,26 @@
                     <learning_rate type="float" value="0.001" />
                 </parameters>
 
-                <xgboost plugin="plugins/manips/many_to_one_xgb.py" tag="xgb1-parkinsons">
+                <xgboost plugin="plugins/manips/many_to_one_xgb.py" tag="xgb1-ozone">
                     <n_features type="int" value="5" />
                 </xgboost>
 
-                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf1-parkinsons"></randomforest>
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf1-ozone"></randomforest>
 
-                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca1-parkinsons">
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca1-ozone">
                     <n_features type="int" value="5" />
                 </pca>
 
-                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand1-parkinsons">
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand1-ozone">
                     <time_interval type="int" value="20" />
                 </candlestick>
 
-                <vanilla plugin="plugins/manips/many_to_one_vanilla.py" tag="vanilla1-parkinsons"></vanilla>
+                <vanilla plugin="plugins/manips/many_to_one_vanilla.py" tag="vanilla1-ozone"></vanilla>
             </model>
         </dataset>
     </train>
     <attack>
-        <dataset file="energy-appliances-weather/energy-appliances-weather.csv">
+        <dataset file="optical-interconnection/optical-interconnection-dataset.csv">
             <CW_L2 plugin="plugins/attacks/carlinil2.py" model_plugin="plugins/models/RNN/LSTM.py" tag="cw_l2_1">
                 <max_change type="float" value="0.2" />
                 <min_change type="float" value="0.05" />
@@ -83,7 +83,7 @@
             </CW_L2>
         </dataset>
 
-        <dataset file="parkinsons-telemonitoring/parkinsons-telemonitoring.csv">
+        <dataset file="ozone-level/ozone-level-dataset.csv">
             <CW_L2 plugin="plugins/attacks/carlinil2.py" model_plugin="plugins/models/RNN/LSTM.py" tag="cw_l2_1">
                 <max_change type="float" value="0.2" />
                 <min_change type="float" value="0.05" />
@@ -100,19 +100,19 @@
     </attack>
     <clean>
         <clear_tmp />
-        <plot plugin="plugins/plots/plot_rmse_si_mae_no_linf.py" tag="energy-weather-appliances">
-            <tag value="xgb1-energy" />
-            <tag value="rf1-energy" />
-            <tag value="pca1-energy" />
-            <tag value="cand1-energy" />
-            <tag value="vanilla1-energy" />
+        <plot plugin="plugins/plots/plot_rmse_si_mae_no_linf.py" tag="optical-interconnection">
+            <tag value="xgb1-optical" />
+            <tag value="rf1-optical" />
+            <tag value="pca1-optical" />
+            <tag value="cand1-optical" />
+            <tag value="vanilla1-optical" />
         </plot>
-        <plot plugin="plugins/plots/plot_rmse_si_mae_no_linf.py" tag="energy-weather-appliances">
-            <tag value="xgb1-parkinsons" />
-            <tag value="rf1-parkinsons" />
-            <tag value="pca1-parkinsons" />
-            <tag value="cand1-parkinsons" />
-            <tag value="vanilla1-parkinsons" />
+        <plot plugin="plugins/plots/plot_rmse_si_mae_no_linf.py" tag="ozone-level">
+            <tag value="xgb1-ozone" />
+            <tag value="rf1-ozone" />
+            <tag value="pca1-ozone" />
+            <tag value="cand1-ozone" />
+            <tag value="vanilla1-ozone" />
         </plot>
         <compress>
             <format value="gzip" />

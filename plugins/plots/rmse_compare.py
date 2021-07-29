@@ -31,7 +31,7 @@ class HyperParamCompare(Plot):
         plt.savefig(self.save_path + f"{self.plot_name}-rmse-values.png")
         plt.close()
 
-    def _dict_builder(tuple_list: list) -> dict:
+    def _dict_builder(self, tuple_list: list) -> dict:
         d = dict()
         for data in tuple_list:
             d.update({data[0], data[1]})

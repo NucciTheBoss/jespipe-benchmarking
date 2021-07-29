@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simu>
     <train>
-        <dataset file="air-quality/air-quality-dataset.csv">
+        <dataset file="optical-interconnection/optical-interconnection-dataset.csv">
             <model plugin="plugins/models/RNN/LSTM.py">
-                <name value="air-quality-one-attack-one-plot" />
+                <name value="optical-interconnection-one-attack-one-plot" />
 
                 <algorithm value="LSTM" />
 
@@ -16,12 +16,12 @@
                     <learning_rate type="float" value="0.001" />
                 </parameters>
 
-                <vanilla plugin="plugins/manips/many_to_one_vanilla.py" tag="vanilla1-air"></vanilla>
+                <vanilla plugin="plugins/manips/many_to_one_vanilla.py" tag="vanilla1-optical"></vanilla>
             </model>
         </dataset>
     </train>
     <attack>
-        <dataset file="air-quality/air-quality-dataset.csv">
+        <dataset file="optical-interconnection/optical-interconnection-dataset.csv">
             <CW_L2 plugin="plugins/attacks/carlinil2.py" model_plugin="plugins/models/RNN/LSTM.py" tag="cw_l2_1">
                 <max_change type="float" value="0.2" />
                 <min_change type="float" value="0.05" />
@@ -38,8 +38,8 @@
     </attack>
     <clean>
         <clear_tmp />
-        <plot plugin="plugins/plots/plot_rmse_si_mae_no_linf.py" tag="air-quality">
-            <tag value="vanilla1-air" />
+        <plot plugin="plugins/plots/plot_rmse_si_mae_no_linf.py" tag="optical-interconnection">
+            <tag value="vanilla1-optical" />
         </plot>
         <compress>
             <format value="gzip" />
