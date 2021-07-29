@@ -2,8 +2,8 @@
 
 import joblib
 import matplotlib.pyplot as plt
-from jespipe.plugin.start import start
 from jespipe.plugin.clean.plotter import Plot
+from jespipe.plugin.start import start
 
 
 class HyperParamCompare(Plot):
@@ -28,7 +28,7 @@ class HyperParamCompare(Plot):
         plt.xlabel("Models"); plt.ylabel("Root Mean Squared Error (RMSE)")
         plt.scatter(names, values, c="red")
         plt.title(f"{self.plot_name}")
-        plt.savefig(self.save_path + f"{self.plot_name}-rmse-values.png")
+        plt.savefig(self.save_path + f"/{self.plot_name}-rmse-values.png")
         plt.close()
 
     def _dict_builder(self, tuple_list: list) -> dict:
