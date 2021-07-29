@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simu>
+    <train>
+        <dataset file="air-quality/air-quality-dataset.csv">
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="air-quality-one-attack-one-plot" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="36" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="400" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgb.py" tag="xgb1-air">
+                    <n_features type="int" value="6" />
+                </xgboost>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf1-air"></randomforest>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca1-air">
+                    <n_features type="int" value="6" />
+                </pca>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand1-air">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+
+                <vanilla plugin="plugins/manips/many_to_one_vanilla.py" tag="vanilla1-air"></vanilla>
+            </model>
+        </dataset>
+    </train>
+    <attack>
+        <dataset file="air-quality/air-quality-dataset.csv">
+            <CW_L2 plugin="plugins/attacks/carlinil2.py" model_plugin="plugins/models/RNN/LSTM.py" tag="cw_l2_1">
+                <max_change type="float" value="0.2" />
+                <min_change type="float" value="0.05" />
+                <change_step type="float" value="0.025" />
+                <learning_rate type="float" value="0.001" />
+                <max_iter type="int" value="100" />
+                <binary_search_steps type="int" value="9" />
+                <batch_size type="int" value="20" />
+                <initial_cost type="int" value="1" />
+                <sequence_length type="int" value="60" />
+                <verbose type="bool" value="True" />
+            </CW_L2>
+        </dataset>
+    </attack>
+    <clean>
+        <clear_tmp />
+        <plot plugin="plugins/plots/plot_rmse_si_mae_no_linf.py" tag="air-quality">
+            <tag value="xgb1-air" />
+            <tag value="rf1-air" />
+            <tag value="pca1-air" />
+            <tag value="cand1-air" />
+            <tag value="vanilla1-air" />
+        </plot>
+        <compress>
+            <format value="gzip" />
+            <name value="five-model-one-attack-one-plot" />
+            <path value="." />
+        </compress>
+    </clean>
+</simu>
