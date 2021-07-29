@@ -34,10 +34,9 @@ class HyperParamCompare(Plot):
     def _dict_builder(self, tuple_list: list) -> dict:
         d = dict()
         for data in tuple_list:
-            d.update({data[0], data[1]})
+            d.update({data[0], data[1]["rmse"]})
 
         return d
-
 
 
 if __name__ == "__main__":
