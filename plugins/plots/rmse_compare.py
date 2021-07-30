@@ -27,6 +27,7 @@ class HyperParamCompare(Plot):
         plt.figure()
         plt.xlabel("Models"); plt.ylabel("Root Mean Squared Error (RMSE)")
         plt.scatter(names, values, c="red")
+        plt.xticks(rotation=45)
         plt.title(f"{self.plot_name}")
         plt.savefig(self.save_path + f"/{self.plot_name}-rmse-values.png")
         plt.close()

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simu>
     <train>
-        <dataset file="optical-interconnection/optical-interconnection-dataset.csv">
+        <dataset file="optical-interconnection/optical-interconnection.csv">
             <model plugin="plugins/models/RNN/LSTM.py">
                 <name value="optical-interconnection-one-attack-one-plot" />
 
@@ -34,7 +34,7 @@
             </model>
         </dataset>
 
-        <dataset file="ozone-level/ozone-level-dataset.csv">
+        <dataset file="ozone-level/ozone-level.csv">
             <model plugin="plugins/models/RNN/LSTM.py">
                 <name value="ozone-level-one-attack-one-plot" />
 
@@ -68,7 +68,7 @@
         </dataset>
     </train>
     <attack>
-        <dataset file="optical-interconnection/optical-interconnection-dataset.csv">
+        <dataset file="optical-interconnection/optical-interconnection.csv">
             <CW_L2 plugin="plugins/attacks/carlinil2.py" model_plugin="plugins/models/RNN/LSTM.py" tag="cw_l2_1">
                 <max_change type="float" value="0.2" />
                 <min_change type="float" value="0.05" />
@@ -81,7 +81,7 @@
                 <sequence_length type="int" value="60" />
                 <verbose type="bool" value="True" />
             </CW_L2>
-            <CW_Linf plugin="examples/plugins/attacks/carlinilinf.py" model_plugin="examples/plugins/models/RNN/LSTM.py" tag="cw_linf_1">
+            <CW_Linf plugin="plugins/attacks/carlinilinf.py" model_plugin="plugins/models/RNN/LSTM.py" tag="cw_linf_1">
                 <max_change type="float" value="0.2" />
                 <min_change type="float" value="0.05" />
                 <change_step type="float" value="0.025" />
@@ -96,7 +96,7 @@
             </CW_Linf>
         </dataset>
 
-        <dataset file="ozone-level/ozone-level-dataset.csv">
+        <dataset file="ozone-level/ozone-level.csv">
             <CW_L2 plugin="plugins/attacks/carlinil2.py" model_plugin="plugins/models/RNN/LSTM.py" tag="cw_l2_1">
                 <max_change type="float" value="0.2" />
                 <min_change type="float" value="0.05" />
@@ -109,7 +109,7 @@
                 <sequence_length type="int" value="60" />
                 <verbose type="bool" value="True" />
             </CW_L2>
-            <CW_Linf plugin="examples/plugins/attacks/carlinilinf.py" model_plugin="examples/plugins/models/RNN/LSTM.py" tag="cw_linf_1">
+            <CW_Linf plugin="plugins/attacks/carlinilinf.py" model_plugin="plugins/models/RNN/LSTM.py" tag="cw_linf_1">
                 <max_change type="float" value="0.2" />
                 <min_change type="float" value="0.05" />
                 <change_step type="float" value="0.025" />

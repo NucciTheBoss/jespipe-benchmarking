@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simu>
+    <train>
+        <dataset file="google-stock/google-stock.csv">
+            <!-- PCA intrinsic testing -->
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-intrin-test-1" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="150" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-intrin1-2">
+                    <n_features type="int" value="2" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-intrin-test-2" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="175" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-intrin2-2">
+                    <n_features type="int" value="2" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-intrin-test-3" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="200" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-intrin3-2">
+                    <n_features type="int" value="2" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-intrin-test-4" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="225" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-intrin4-2">
+                    <n_features type="int" value="2" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-intrin-test-5" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="250" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-intrin5-2">
+                    <n_features type="int" value="2" />
+                </pca>
+            <model>
+
+            <!-- PCA intrinsic but with different batch size -->
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-intrin-dif-batch-test-1" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="150" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-intrin-dif-batch1-2">
+                    <n_features type="int" value="2" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-intrin-dif-batch-test-2" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="175" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-intrin-dif-batch2-2">
+                    <n_features type="int" value="2" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-intrin-dif-batch-test-3" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="200" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-intrin-dif-batch3-2">
+                    <n_features type="int" value="2" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-intrin-dif-batch-test-4" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="225" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-intrin-dif-batch4-2">
+                    <n_features type="int" value="2" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-intrin-dif-batch-test-5" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="250" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-intrin-dif-batch5-2">
+                    <n_features type="int" value="2" />
+                </pca>
+            <model>
+
+            <!-- PCA all features -->
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-full-test-1" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="150" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-full1-2">
+                    <n_features type="int" value="4" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-full-test-2" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="175" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-full2-2">
+                    <n_features type="int" value="4" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-full-test-3" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="200" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-full3-2">
+                    <n_features type="int" value="4" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-full-test-4" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="225" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-full4-2">
+                    <n_features type="int" value="4" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-full-test-5" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="250" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-full5-2">
+                    <n_features type="int" value="4" />
+                </pca>
+            <model>
+
+            <!-- PCA all feature but with different batch size -->
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-full-dif-batch-test-1" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="150" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-full-dif-batch1-2">
+                    <n_features type="int" value="4" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-full-dif-batch-test-2" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="175" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-full-dif-batch2-2">
+                    <n_features type="int" value="4" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-full-dif-batch-test-3" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="200" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-full-dif-batch3-2">
+                    <n_features type="int" value="4" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-full-dif-batch-test-4" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="225" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-full-dif-batch4-2">
+                    <n_features type="int" value="4" />
+                </pca>
+            <model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="pca-full-dif-batch-test-5" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="250" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <pca plugin="plugins/manips/many_to_one_pca.py" tag="pca-full-dif-batch5-2">
+                    <n_features type="int" value="4" />
+                </pca>
+            <model>
+
+            <!-- XGBoost -->
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="xgboost-test-1" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="150" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgboost.py" tag="xgboost1-2">
+                    <n_features type="int" value="2" />
+                </xgboost>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="xgboost-test-2" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="175" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgboost.py" tag="xgboost2-2">
+                    <n_features type="int" value="2" />
+                </xgboost>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="xgboost-test-3" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="200" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgboost.py" tag="xgboost3-2">
+                    <n_features type="int" value="2" />
+                </xgboost>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="xgboost-test-4" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="225" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgboost.py" tag="xgboost4-2">
+                    <n_features type="int" value="2" />
+                </xgboost>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="xgboost-test-5" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="250" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgboost.py" tag="xgboost5-2">
+                    <n_features type="int" value="2" />
+                </xgboost>
+            </model>
+
+            <!-- XGBoost but with different batch size -->
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="xgboost-dif-batch-test-1" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="150" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgboost.py" tag="xgboost-dif-batch1-2">
+                    <n_features type="int" value="2" />
+                </xgboost>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="xgboost-dif-batch-test-2" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="175" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgboost.py" tag="xgboost-dif-batch2-2">
+                    <n_features type="int" value="2" />
+                </xgboost>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="xgboost-dif-batch-test-3" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="200" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgboost.py" tag="xgboost-dif-batch3-2">
+                    <n_features type="int" value="2" />
+                </xgboost>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="xgboost-dif-batch-test-4" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="225" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgboost.py" tag="xgboost-dif-batch4-2">
+                    <n_features type="int" value="2" />
+                </xgboost>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="xgboost-dif-batch-test-5" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="250" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <xgboost plugin="plugins/manips/many_to_one_xgboost.py" tag="xgboost-dif-batch5-2">
+                    <n_features type="int" value="2" />
+                </xgboost>
+            </model>
+
+            <!-- Random Forest -->
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="random-forest-test-1" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="150" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf-test1-2"></randomforest>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="random-forest-test-2" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="175" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf-test2-2"></randomforest>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="random-forest-test-3" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="200" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf-test3-2"></randomforest>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="random-forest-test-4" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="225" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf-test4-2"></randomforest>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="random-forest-test-5" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="250" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf-test5-2"></randomforest>
+            </model>
+
+            <!-- Random Forest but with different batch size -->
+            <model>
+                <name value="random-forest-dif-batch-test-1" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="150" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf-dif-batch1-2"></randomforest>
+            </model>
+
+            <model>
+                <name value="random-forest-dif-batch-test-2" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="175" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf-dif-batch2-2"></randomforest>
+            </model>
+
+            <model>
+                <name value="random-forest-dif-batch-test-3" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="200" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf-dif-batch3-2"></randomforest>
+            </model>
+
+            <model>
+                <name value="random-forest-dif-batch-test-4" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="225" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf-dif-batch4-2"></randomforest>
+            </model>
+
+            <model>
+                <name value="random-forest-dif-batch-test-5" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="250" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <randomforest plugin="plugins/manips/many_to_one_randomforest.py" tag="rf-dif-batch5-2"></randomforest>
+            </model>
+
+            <!-- Candlestick -->
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="candlestick-test-1" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="150" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand-test1-2">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="candlestick-test-2" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="175" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand-test2-2">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="candlestick-test-3" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="200" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand-test3-2">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="candlestick-test-4" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="225" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand-test4-2">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="candlestick-test-5" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="128" />
+                    <epochs type="int" value="250" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand-test5-2">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+            </model>
+
+            <!-- Candlestick but with different batch size -->
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="candlestick-dif-batch-test-1" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="150" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand-dif-batch1-2">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="candlestick-dif-batch-test-2" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="175" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand-dif-batch2-2">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="candlestick-dif-batch-test-3" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="200" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand-dif-batch3-2">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="candlestick-dif-batch-test-4" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="225" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand-dif-batch4-2">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+            </model>
+
+            <model plugin="plugins/models/RNN/LSTM.py">
+                <name value="candlestick-dif-batch-test-5" />
+
+                <algorithm value="LSTM" />
+
+                <parameters>
+                    <sequence_length type="int" value="12" />
+                    <batch_size type="int" value="256" />
+                    <epochs type="int" value="250" />
+                    <validation_split type="float" value="0.1" />
+                    <verbose type="bool" value="True" />
+                    <learning_rate type="float" value="0.001" />
+                </parameters>
+
+                <candlestick plugin="plugins/manips/many_to_one_candlestick.py" tag="cand-dif-batch5-2">
+                    <time_interval type="int" value="20" />
+                </candlestick>
+            </model>
+
+        </dataset>
+    </train>
+    <clean>
+        <clear_tmp />
+        <plot plugin="plugins/plots/rmse_compare.py" tag="google-stock-pca-intrin-batch-128">
+            <tag value="pca-intrin1-2" />
+            <tag value="pca-intrin2-2" />
+            <tag value="pca-intrin3-2" />
+            <tag value="pca-intrin4-2" />
+            <tag value="pca-intrin5-2" />
+        </plot>
+        <plot plugin="plugins/plots/rmse_compare.py" tag="google-stock-pca-intrin-batch-256">
+            <tag value="pca-intrin-dif-batch1-2" />
+            <tag value="pca-intrin-dif-batch2-2" />
+            <tag value="pca-intrin-dif-batch3-2" />
+            <tag value="pca-intrin-dif-batch4-2" />
+            <tag value="pca-intrin-dif-batch5-2" />
+        </plot>
+        <plot plugin="plugins/plots/rmse_compare.py" tag="google-stock-pca-full-batch-128">
+            <tag value="pca-full1-2" />
+            <tag value="pca-full2-2" />
+            <tag value="pca-full3-2" />
+            <tag value="pca-full4-2" />
+            <tag value="pca-full5-2" />
+        </plot>
+        <plot plugin="plugins/plots/rmse_compare.py" tag="google-stock-pca-full-batch-256">
+            <tag value="pca-full-dif-batch1-2" />
+            <tag value="pca-full-dif-batch2-2" />
+            <tag value="pca-full-dif-batch3-2" />
+            <tag value="pca-full-dif-batch4-2" />
+            <tag value="pca-full-dif-batch5-2" />
+        </plot>
+        <plot plugin="plugins/plots/rmse_compare.py" tag="google-stock-xboost-batch-128">
+            <tag value="xgboost1-2" />
+            <tag value="xgboost2-2" />
+            <tag value="xgboost3-2" />
+            <tag value="xgboost4-2" />
+            <tag value="xgboost5-2" />
+        </plot>
+        <plot plugin="plugins/plots/rmse_compare.py" tag="google-stock-xboost-batch-256">
+            <tag value="xgboost-dif-batch1-2" />
+            <tag value="xgboost-dif-batch2-2" />
+            <tag value="xgboost-dif-batch3-2" />
+            <tag value="xgboost-dif-batch4-2" />
+            <tag value="xgboost-dif-batch5-2" />
+        </plot>
+        <plot plugin="plugins/plots/rmse_compare.py" tag="google-stock-random-forest-batch-128">
+            <tag value="rf-test1-2" />
+            <tag value="rf-test2-2" />
+            <tag value="rf-test3-2" />
+            <tag value="rf-test4-2" />
+            <tag value="rf-test5-2" />
+        </plot>
+        <plot plugin="plugins/plots/rmse_compare.py" tag="google-stock-random-forest-batch-256">
+            <tag value="rf-dif-batch1-2" />
+            <tag value="rf-dif-batch2-2" />
+            <tag value="rf-dif-batch3-2" />
+            <tag value="rf-dif-batch4-2" />
+            <tag value="rf-dif-batch5-2" />
+        </plot>
+        <plot plugin="plugins/plots/rmse_compare.py" tag="google-stock-candlestick-batch-128">
+            <tag value="cand-test1-2" />
+            <tag value="cand-test2-2" />
+            <tag value="cand-test3-2" />
+            <tag value="cand-test4-2" />
+            <tag value="cand-test5-2" />
+        </plot>
+        <plot plugin="plugins/plots/rmse_compare.py" tag="google-stock-candlestick-batch-256">
+            <tag value="cand-dif-batch1-2" />
+            <tag value="cand-dif-batch2-2" />
+            <tag value="cand-dif-batch3-2" />
+            <tag value="cand-dif-batch4-2" />
+            <tag value="cand-dif-batch5-2" />
+        </plot>
+        <compress>
+            <format value="xz" />
+            <name value="google-stock-hyperparam-tuning" />
+            <path value="." />
+        </compress>
+    </clean>
+</simu>

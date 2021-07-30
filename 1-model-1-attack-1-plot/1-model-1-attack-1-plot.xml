@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simu>
     <train>
-        <dataset file="optical-interconnection/optical-interconnection-dataset.csv">
+        <dataset file="optical-interconnection/optical-interconnection.csv">
             <model plugin="plugins/models/RNN/LSTM.py">
                 <name value="optical-interconnection-one-attack-one-plot" />
 
@@ -21,7 +21,7 @@
         </dataset>
     </train>
     <attack>
-        <dataset file="optical-interconnection/optical-interconnection-dataset.csv">
+        <dataset file="optical-interconnection/optical-interconnection.csv">
             <CW_L2 plugin="plugins/attacks/carlinil2.py" model_plugin="plugins/models/RNN/LSTM.py" tag="cw_l2_1">
                 <max_change type="float" value="0.2" />
                 <min_change type="float" value="0.05" />

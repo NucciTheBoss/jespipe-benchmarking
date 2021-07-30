@@ -129,6 +129,9 @@ dmypy.json
 .pyre/
 
 # Jespipe specific ignores
+google-stock/
+optical-interconnection/
+ozone-level/
 jespipe/
 data/
 *.tar
