@@ -27,9 +27,9 @@ class HyperParamCompare(Plot):
         plt.figure()
         plt.xlabel("Models"); plt.ylabel("Root Mean Squared Error (RMSE)")
         plt.scatter(names, values, c="red")
-        plt.xticks(rotation=45)
+        plt.xticks(rotation=30)
         plt.title(f"{self.plot_name}")
-        plt.savefig(self.save_path + f"/{self.plot_name}-rmse-values.png")
+        plt.savefig(self.save_path + f"/{self.plot_name}-rmse-values.png", bbox_inches="tight")
         plt.close()
 
     def _dict_builder(self, tuple_list: list) -> dict:
