@@ -1,0 +1,57 @@
+{
+    "datasets": {
+        "air-quality": {
+            "sequence_length": null,
+            "batch_size": null,
+            "epochs": null,
+            "validation_split": null,
+            "verbose": null,
+            "learning_rate": null
+        },
+
+        "energy-applicances": {
+            "sequence_length": null,
+            "batch_size": null,
+            "epochs": null,
+            "validation_split": null,
+            "verbose": null,
+            "learning_rate": null
+        },
+
+        "google-stock": {
+            "sequence_length": 12,
+            "batch_size": 128,
+            "epochs": 250,
+            "validation_split": 0.1,
+            "verbose": true,
+            "learning_rate": 0.001
+        },
+
+        "optical-interconnection": {
+            "sequence_length": null,
+            "batch_size": null,
+            "epochs": null,
+            "validation_split": null,
+            "verbose": null,
+            "learning_rate": null
+        },
+
+        "ozone-level": {
+            "sequence_length": 36,
+            "batch_size": 128,
+            "epochs": 350,
+            "validation_split": 0.1,
+            "verbose": true,
+            "learning_rate": 0.001
+        },
+
+        "parkinsons-telemonitoring": {
+            "sequence_length": null,
+            "batch_size": null,
+            "epochs": null,
+            "validation_split": null,
+            "verbose": null,
+            "learning_rate": null
+        }
+    }
+}

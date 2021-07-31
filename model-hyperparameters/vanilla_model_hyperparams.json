@@ -1,23 +1,5 @@
 {
     "datasets": {
-        "google-stock": {
-            "sequence_length": 12,
-            "batch_size": 128,
-            "epochs": 200,
-            "validation_split": 0.1,
-            "verbose": true,
-            "learning_rate": 0.001
-        },
-
-        "ozone-level": {
-            "sequence_length": 12,
-            "batch_size": 128,
-            "epochs": 300,
-            "validation_split": 0.1,
-            "verbose": true,
-            "learning_rate": 0.001
-        },
-
         "air-quality": {
             "sequence_length": 36,
             "batch_size": 128,
@@ -36,10 +18,28 @@
             "learning_rate": 0.001
         },
 
+        "google-stock": {
+            "sequence_length": 12,
+            "batch_size": 128,
+            "epochs": 200,
+            "validation_split": 0.1,
+            "verbose": true,
+            "learning_rate": 0.001
+        },
+
         "optical-interconnection": {
             "sequence_length": 6,
             "batch_size": 64,
             "epochs": 150,
+            "validation_split": 0.1,
+            "verbose": true,
+            "learning_rate": 0.001
+        },
+
+        "ozone-level": {
+            "sequence_length": 12,
+            "batch_size": 128,
+            "epochs": 300,
             "validation_split": 0.1,
             "verbose": true,
             "learning_rate": 0.001
